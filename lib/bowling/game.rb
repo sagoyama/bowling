@@ -15,6 +15,9 @@ module Bowling
 				if @rolls[roll_idx] == 10 #strike
 					score += @rolls[roll_idx] + @rolls[roll_idx + 1] + @rolls[roll_idx + 2]
 					roll_idx +=1
+				elsif ( @rolls[roll_idx] + @rolls[roll_idx + 1] ) == 10 #spare
+					score += @rolls[roll_idx] + @rolls[roll_idx + 1] + @rolls[roll_idx + 2]
+					roll_idx += 2
 				else
 					score += @rolls[roll_idx] + @rolls[roll_idx + 1]
 					roll_idx +=2
